@@ -1,0 +1,7 @@
+{
+  "constraints": {
+    "max_tokens_per_domain": 10000,
+    "max_subdomains": 20,
+    "quality_threshold": 0.8
+  }
+}

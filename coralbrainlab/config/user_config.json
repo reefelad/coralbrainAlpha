@@ -1,0 +1,12 @@
+{
+  "user_preferences": {
+    "model": "default",
+    "auto_save": true,
+    "notification_settings": {}
+  },
+  "project_info": {
+    "name": "CoralBrainLab",
+    "version": "1.0.0",
+    "description": "Multi-domain knowledge extraction system for reef aquaculture"
+  }
+}

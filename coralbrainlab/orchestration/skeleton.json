@@ -1,0 +1,1179 @@
+{
+    "project": "CoralBrainLab",
+    "version": "3.0",
+    "total_domains": 38,
+    "domains": [
+        {
+            "id": "01_water_chemistry",
+            "name": "Water Chemistry",
+            "category": "core_science",
+            "priority": 1,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "major_elements",
+                    "name": "Major Elements (Alk/Ca/Mg)",
+                    "criticality": "high"
+                },
+                {
+                    "id": "nutrients",
+                    "name": "Nutrients (NO3/PO4/N:P)",
+                    "criticality": "high"
+                },
+                {
+                    "id": "trace_elements",
+                    "name": "Trace & Minor Elements",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "stability_parameters",
+                    "name": "Stability Parameters (pH/ORP/Salinity/Temp)",
+                    "criticality": "high"
+                },
+                {
+                    "id": "parameter_interactions",
+                    "name": "Parameter Interactions",
+                    "criticality": "high"
+                },
+                {
+                    "id": "testing_measurement",
+                    "name": "Testing & Measurement",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "trend_analysis",
+                    "name": "Trend Analysis & Interpretation",
+                    "criticality": "high"
+                },
+                {
+                    "id": "safe_corrections",
+                    "name": "Safe Correction Methods",
+                    "criticality": "critical"
+                }
+            ]
+        },
+        {
+            "id": "02_lighting",
+            "name": "Lighting & Photobiology",
+            "category": "core_science",
+            "priority": 2,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "par_spectrum",
+                    "name": "PAR & Spectrum Fundamentals",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "photoperiod",
+                    "name": "Photoperiod & Light Cycles",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "fixture_types",
+                    "name": "Fixture Types & Technologies",
+                    "criticality": "low"
+                },
+                {
+                    "id": "mounting_placement",
+                    "name": "Mounting & Placement",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "acclimation",
+                    "name": "Light Acclimation Protocols",
+                    "criticality": "high"
+                },
+                {
+                    "id": "coral_light_requirements",
+                    "name": "Coral-Specific Light Requirements",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "03_flow_hydrodynamics",
+            "name": "Flow & Hydrodynamics",
+            "category": "core_science",
+            "priority": 3,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "turnover_volume",
+                    "name": "Turnover & Volume Requirements",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "flow_patterns",
+                    "name": "Flow Patterns (Laminar/Turbulent/Gyre)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "boundary_layers",
+                    "name": "Boundary Layers & Gas Exchange",
+                    "criticality": "high"
+                },
+                {
+                    "id": "placement_dead_spots",
+                    "name": "Placement & Dead Spot Management",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "pump_technologies",
+                    "name": "Pump Technologies & Specs",
+                    "criticality": "low"
+                },
+                {
+                    "id": "anemone_lps_protection",
+                    "name": "Protection for Anemones & LPS",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "04_coral_biology",
+            "name": "Coral Biology",
+            "category": "core_science",
+            "priority": 4,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "anatomy_physiology",
+                    "name": "Coral Anatomy & Physiology",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "calcification_process",
+                    "name": "Calcification Mechanisms",
+                    "criticality": "high"
+                },
+                {
+                    "id": "zooxanthellae_symbiosis",
+                    "name": "Zooxanthellae Symbiosis",
+                    "criticality": "high"
+                },
+                {
+                    "id": "metabolism_respiration",
+                    "name": "Metabolism & Respiration",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "skeletal_structure",
+                    "name": "Skeletal Structure & Density",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "05_coral_nutrition",
+            "name": "Coral Nutrition",
+            "category": "core_science",
+            "priority": 5,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "dissolved_organics",
+                    "name": "Dissolved Organic Compounds (DOC)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "particulate_feeding",
+                    "name": "Particulate Organic Matter (POM)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "amino_acids",
+                    "name": "Amino Acids & Vitamins",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "target_feeding",
+                    "name": "Target Feeding Protocols",
+                    "criticality": "low"
+                },
+                {
+                    "id": "feeding_response",
+                    "name": "Feeding Response Signs",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "06_pests_diseases",
+            "name": "Pests & Diseases",
+            "category": "core_science",
+            "priority": 6,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "common_pests",
+                    "name": "Common Coral Pests (AEFW/Red Bugs)",
+                    "criticality": "high"
+                },
+                {
+                    "id": "disease_identification",
+                    "name": "Disease Identification (RTN/STN)",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "treatment_dips",
+                    "name": "Treatment Dips & Baths",
+                    "criticality": "high"
+                },
+                {
+                    "id": "biological_controls",
+                    "name": "Biological Control Agents",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "quarantine_integration",
+                    "name": "Post-Outbreak Quarantine",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "07_filtration_science",
+            "name": "Filtration Science",
+            "category": "core_science",
+            "priority": 7,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "mechanical_filtration",
+                    "name": "Mechanical Filtration Principles",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "biological_filtration",
+                    "name": "Biological Filtration Cycle",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "chemical_filtration",
+                    "name": "Chemical Filtration (Carbon/GFO)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "protein_skimming",
+                    "name": "Protein Skimming Theory",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "refugium_mechanics",
+                    "name": "Refugium Mechanics",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "08_microbiology",
+            "name": "Microbiology",
+            "category": "core_science",
+            "priority": 8,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "bacterial_strains",
+                    "name": "Beneficial Bacterial Strains",
+                    "criticality": "high"
+                },
+                {
+                    "id": "carbon_dosing",
+                    "name": "Carbon Dosing Dynamics",
+                    "criticality": "high"
+                },
+                {
+                    "id": "microbiome_diversity",
+                    "name": "Microbiome Diversity",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "pathogenic_bacteria",
+                    "name": "Pathogenic Bacteria Management",
+                    "criticality": "high"
+                },
+                {
+                    "id": "cyano_management",
+                    "name": "Cyanobacteria Management",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "09_dosing_methods",
+            "name": "Dosing Methods",
+            "category": "methodology",
+            "priority": 9,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "two_part_balling",
+                    "name": "2-Part & Balling Method",
+                    "criticality": "high"
+                },
+                {
+                    "id": "calcium_reactors",
+                    "name": "Calcium Reactor Tuning",
+                    "criticality": "high"
+                },
+                {
+                    "id": "kalkwasser",
+                    "name": "Kalkwasser Protocols",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "trace_dosing",
+                    "name": "Trace Element Strategies",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "icp_corrections",
+                    "name": "ICP-Based Corrections",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "10_testing_protocols",
+            "name": "Testing Protocols",
+            "category": "methodology",
+            "priority": 10,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "manual_testing",
+                    "name": "Manual Testing Best Practices",
+                    "criticality": "high"
+                },
+                {
+                    "id": "automated_checkers",
+                    "name": "Automated Checkers (Trident/Alkatronic)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "icp_sampling",
+                    "name": "ICP Sampling Procedures",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "microscope_analysis",
+                    "name": "Microscope Analysis",
+                    "criticality": "low"
+                },
+                {
+                    "id": "log_keeping",
+                    "name": "Log Keeping Standards",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "11_acclimation_quarantine",
+            "name": "Acclimation & Quarantine",
+            "category": "methodology",
+            "priority": 11,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "fish_quarantine",
+                    "name": "Fish Quarantine Protocols (TTM/Copper)",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "coral_quarantine",
+                    "name": "Coral Quarantine Setup",
+                    "criticality": "high"
+                },
+                {
+                    "id": "invert_quarantine",
+                    "name": "Invertebrate Quarantine",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "acclimation_methods",
+                    "name": "Acclimation Methods (Drip/Temp)",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "pest_inspection",
+                    "name": "Visual Inspection & Dip",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "12_propagation",
+            "name": "Propagation",
+            "category": "methodology",
+            "priority": 12,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "fragging_tools",
+                    "name": "Fragging Tools & Sterilization",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "sps_fragging",
+                    "name": "SPS Fragging Techniques",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "lps_fragging",
+                    "name": "LPS Fragging Techniques",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "soft_coral_fragging",
+                    "name": "Soft Coral Propagation",
+                    "criticality": "low"
+                },
+                {
+                    "id": "healing_protocols",
+                    "name": "Post-Fragging Healing",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "13_system_design",
+            "name": "System Design",
+            "category": "methodology",
+            "priority": 13,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "overflow_mechanics",
+                    "name": "Overflow & Drain Mechanics (Herbie/Bean)",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "sump_design",
+                    "name": "Sump Layout & Baffles",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "plumbing_hydraulics",
+                    "name": "Plumbing Hydraulics",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "electrical_safety",
+                    "name": "Electrical Layout & Safety",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "material_selection",
+                    "name": "Reef-Safe Materials",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "14_tanks_plumbing",
+            "name": "Tanks & Plumbing Equipment",
+            "category": "equipment",
+            "priority": 14,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "glass_acrylic",
+                    "name": "Glass vs Acrylic Specifications",
+                    "criticality": "low"
+                },
+                {
+                    "id": "stand_structural",
+                    "name": "Stand Structural Engineering",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "pipe_fittings",
+                    "name": "PVC Types & Fittings",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "bulkheads_seals",
+                    "name": "Bulkheads & Seals",
+                    "criticality": "high"
+                },
+                {
+                    "id": "drilling_techniques",
+                    "name": "Glass Drilling",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "15_pumps",
+            "name": "Pumps",
+            "category": "equipment",
+            "priority": 15,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "return_pumps",
+                    "name": "Return Pump Sizing & Head Pressure",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "wave_makers",
+                    "name": "Wave Makers & Gyres",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "ac_vs_dc",
+                    "name": "AC vs DC Pump Technology",
+                    "criticality": "low"
+                },
+                {
+                    "id": "maintenance_servicing",
+                    "name": "Impeller Maintenance",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "16_lighting_systems",
+            "name": "Lighting Systems Equipment",
+            "category": "equipment",
+            "priority": 16,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "led_fixtures",
+                    "name": "LED Fixture Analysis",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "t5_hybrid",
+                    "name": "T5 & Hybrid Systems",
+                    "criticality": "low"
+                },
+                {
+                    "id": "mounting_solutions",
+                    "name": "Mounting Arms & Suspension",
+                    "criticality": "low"
+                },
+                {
+                    "id": "cooling_ventilation",
+                    "name": "Active Cooling & Ventilation",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "17_filtration_equipment",
+            "name": "Filtration Equipment",
+            "category": "equipment",
+            "priority": 17,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "skimmer_tuning",
+                    "name": "Skimmer Sizing & Tuning",
+                    "criticality": "high"
+                },
+                {
+                    "id": "fleece_rollers",
+                    "name": "Fleece Rollers",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "algae_scrubbers",
+                    "name": "Algae Scrubbers & Reactors",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "media_reactors",
+                    "name": "Media Reactors (Carbon/GFO)",
+                    "criticality": "low"
+                },
+                {
+                    "id": "uv_sterilizers",
+                    "name": "UV Sterilizers",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "18_controllers",
+            "name": "Controllers",
+            "category": "equipment",
+            "priority": 18,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "apex_programming",
+                    "name": "Neptune Apex Programming",
+                    "criticality": "high"
+                },
+                {
+                    "id": "hydros_configuration",
+                    "name": "Hydros Configuration",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "ghl_logic",
+                    "name": "GHL Profilux Logic",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "redundancy_planning",
+                    "name": "Controller Redundancy",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "remote_monitoring",
+                    "name": "Remote Monitoring Setup",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "19_sensors",
+            "name": "Sensors",
+            "category": "equipment",
+            "priority": 19,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "ph_orp_probes",
+                    "name": "pH & ORP Probe Calibration",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "temp_salinity",
+                    "name": "Temperature & Salinity Sensors",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "par_meters",
+                    "name": "PAR Meters",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "leak_detection",
+                    "name": "Leak Detection Sensors",
+                    "criticality": "high"
+                },
+                {
+                    "id": "flow_monitoring",
+                    "name": "Flow Sensors",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "20_dosing_equipment",
+            "name": "Dosing Equipment",
+            "category": "equipment",
+            "priority": 20,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "peristaltic_pumps",
+                    "name": "Peristaltic Pump Calibration",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "dos_units",
+                    "name": "Integrated Dosers (DOS/GHL)",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "tubing_management",
+                    "name": "Tubing & Check Valves",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "containers_mixing",
+                    "name": "Dosing Containers & Stirrers",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "21_data_architecture",
+            "name": "Data Architecture",
+            "category": "intelligence",
+            "priority": 21,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "logging_structure",
+                    "name": "Data Logging Structures",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "taxonomy_standards",
+                    "name": "Coral Taxonomy Standards",
+                    "criticality": "low"
+                },
+                {
+                    "id": "metadata_tagging",
+                    "name": "Event Metadata Tagging",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "backup_protocols",
+                    "name": "Data Backup Protocols",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "22_parameter_relationships",
+            "name": "Parameter Relationships",
+            "category": "intelligence",
+            "priority": 22,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "alk_ph_relationship",
+                    "name": "Alk-pH-CO2 Dynamic",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "nutrient_ratios",
+                    "name": "Redfield & N:P Ratios",
+                    "criticality": "high"
+                },
+                {
+                    "id": "temp_metabolism",
+                    "name": "Temperature-Metabolism Curves",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "light_nutrient_balance",
+                    "name": "Light/Nutrient Balance",
+                    "criticality": "critical"
+                }
+            ]
+        },
+        {
+            "id": "23_trend_analysis",
+            "name": "Trend Analysis",
+            "category": "intelligence",
+            "priority": 23,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "consumption_curves",
+                    "name": "Consumption Curve Analysis",
+                    "criticality": "high"
+                },
+                {
+                    "id": "swing_detection",
+                    "name": "Daily Swing Detection",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "outlier_identification",
+                    "name": "Outlier vs Event Identification",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "baseline_establishment",
+                    "name": "Establishing System Baselines",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "24_predictive_indicators",
+            "name": "Predictive Indicators",
+            "category": "intelligence",
+            "priority": 24,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "visual_bioindicators",
+                    "name": "Visual Bio-Indicators",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "chemical_precursors",
+                    "name": "Chemical Precursors to Crashes",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "equipment_failure_signatures",
+                    "name": "Equipment Failure Signatures",
+                    "criticality": "high"
+                },
+                {
+                    "id": "biological_cascade_warning",
+                    "name": "Biological Cascade Warnings",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "25_intervention_frameworks",
+            "name": "Intervention Frameworks",
+            "category": "intelligence",
+            "priority": 25,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "triage_protocols",
+                    "name": "System Triage Protocols",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "escalation_matrix",
+                    "name": "Problem Escalation Matrix",
+                    "criticality": "high"
+                },
+                {
+                    "id": "intervention_logging",
+                    "name": "Intervention Effect Logging",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "decision_trees",
+                    "name": "Automated Decision Trees",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "26_experimental_design",
+            "name": "Experimental Design",
+            "category": "intelligence",
+            "priority": 26,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "variable_isolation",
+                    "name": "Variable Isolation Methods",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "control_group_selection",
+                    "name": "Control Group Selection",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "hypothesis_testing",
+                    "name": "Hypothesis Testing in Reefs",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "27_sensor_integration",
+            "name": "Sensor Integration",
+            "category": "integration",
+            "priority": 27,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "sensor_fusion",
+                    "name": "Sensor Fusion Logic",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "calibration_schedules",
+                    "name": "Calibration Management",
+                    "criticality": "high"
+                },
+                {
+                    "id": "interference_management",
+                    "name": "Electrical Interference Management",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "28_controller_logic",
+            "name": "Controller Logic",
+            "category": "integration",
+            "priority": 28,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "fail_safe_programming",
+                    "name": "Fail-Safe Logic Blocks",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "feed_cycles",
+                    "name": "Feed Cycle Automation",
+                    "criticality": "low"
+                },
+                {
+                    "id": "maintenance_modes",
+                    "name": "Maintenance Mode Logic",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "storm_simulation",
+                    "name": "Storm/Season Simulation",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "29_api_standards",
+            "name": "API Standards",
+            "category": "integration",
+            "priority": 29,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "data_export",
+                    "name": "Data Export Formats (JSON/CSV)",
+                    "criticality": "low"
+                },
+                {
+                    "id": "external_triggers",
+                    "name": "External Alert Triggers",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "iot_integration",
+                    "name": "IoT Home Integration",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "30_safety_interlocks",
+            "name": "Safety Interlocks",
+            "category": "integration",
+            "priority": 30,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "heater_redundancy",
+                    "name": "Heater Redundancy Logic",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "leak_protection",
+                    "name": "Leak Protection Shutoffs",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "dosing_limits",
+                    "name": "Dosing Volume Limits",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "power_failure_recovery",
+                    "name": "Power Failure State Recovery",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "31_maintenance_schedules",
+            "name": "Maintenance Schedules",
+            "category": "integration",
+            "priority": 31,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "daily_tasks",
+                    "name": "Daily Inspection Routine",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "weekly_maintenance",
+                    "name": "Weekly Water Change/Testing",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "monthly_servicing",
+                    "name": "Monthly Pump/Sensor Cleaning",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "annual_overhaul",
+                    "name": "Annual Equipment Overhaul",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "32_troubleshooting",
+            "name": "Troubleshooting",
+            "category": "diagnostic",
+            "priority": 32,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "algae_id",
+                    "name": "Algae Identification & Removal",
+                    "criticality": "high"
+                },
+                {
+                    "id": "cyano_dinos",
+                    "name": "Cyano vs Dines Diagnostics",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "tn_diagnosis",
+                    "name": "Tissue Necrosis Diagnosis",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "equipment_diagnosis",
+                    "name": "Equipment Failure Diagnosis",
+                    "criticality": "high"
+                }
+            ]
+        },
+        {
+            "id": "33_emergency_response",
+            "name": "Emergency Response",
+            "category": "diagnostic",
+            "priority": 33,
+            "pipeline": "critical",
+            "subdomains": [
+                {
+                    "id": "power_outage",
+                    "name": "Power Outage Protocols",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "tank_leak",
+                    "name": "Major Leak Containment",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "overdose_event",
+                    "name": "Chemical Overdose Response",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "crash_prevention",
+                    "name": "Crash Arrest Procedures",
+                    "criticality": "critical"
+                }
+            ]
+        },
+        {
+            "id": "34_recovery_procedures",
+            "name": "Recovery Procedures",
+            "category": "diagnostic",
+            "priority": 34,
+            "pipeline": "important",
+            "subdomains": [
+                {
+                    "id": "post_crash_reset",
+                    "name": "Post-Crash Reset",
+                    "criticality": "high"
+                },
+                {
+                    "id": "microbiome_restoration",
+                    "name": "Microbiome Restoration",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "biomass_rebuilding",
+                    "name": "Biomass Rebuilding",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "35_growth_optimisation",
+            "name": "Growth Optimisation",
+            "category": "commercial",
+            "priority": 35,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "parameter_elevation",
+                    "name": "Elevated Parameter Growth",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "feeding_saturation",
+                    "name": "Nutrient Saturation Feeding",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "par_maxing",
+                    "name": "PAR Maximization",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "36_spawning_reproduction",
+            "name": "Spawning & Reproduction",
+            "category": "commercial",
+            "priority": 36,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "broadcast_spawning",
+                    "name": "Broadcast Spawning Triggers",
+                    "criticality": "low"
+                },
+                {
+                    "id": "larval_rearing",
+                    "name": "Larval Rearing protocols",
+                    "criticality": "low"
+                },
+                {
+                    "id": "settlement_substrates",
+                    "name": "Settlement Substrates",
+                    "criticality": "low"
+                }
+            ]
+        },
+        {
+            "id": "37_multi_system_management",
+            "name": "Multi-System Management",
+            "category": "commercial",
+            "priority": 37,
+            "pipeline": "advanced",
+            "subdomains": [
+                {
+                    "id": "central_filtration",
+                    "name": "Centralized Filtration Design",
+                    "criticality": "medium"
+                },
+                {
+                    "id": "disease_firewalls",
+                    "name": "System Isolation & Firewalls",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "staff_workflows",
+                    "name": "Staff Maintenance Workflows",
+                    "criticality": "medium"
+                }
+            ]
+        },
+        {
+            "id": "38_compliance",
+            "name": "Compliance",
+            "category": "commercial",
+            "priority": 38,
+            "pipeline": "standard",
+            "subdomains": [
+                {
+                    "id": "electrical_codes",
+                    "name": "Electrical Code Compliance",
+                    "criticality": "critical"
+                },
+                {
+                    "id": "chemical_safety",
+                    "name": "SDS & Chemical Safety",
+                    "criticality": "high"
+                },
+                {
+                    "id": "species_regulations",
+                    "name": "CITES & Species Regulations",
+                    "criticality": "medium"
+                }
+            ]
+        }
+    ]
+}

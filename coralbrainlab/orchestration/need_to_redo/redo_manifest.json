@@ -1,0 +1,36 @@
+{
+    "created": "2026-01-28T19:08:36+08:00",
+    "reason": "Processed with Gemini Flash instead of multi-model pipeline",
+    "session_context": "Domain 18 processing from 'begin' command",
+    "affected_subdomains": [
+        {
+            "domain": "18_controllers_automation",
+            "subdomain": "apex_programming",
+            "priority": "HIGH",
+            "safety_critical": true,
+            "notes": "Contains safety-critical Fallback logic and heater override patterns"
+        },
+        {
+            "domain": "18_controllers_automation",
+            "subdomain": "hydros_configuration",
+            "priority": "MEDIUM",
+            "safety_critical": true,
+            "notes": "Collective failover and IP65 safety guidance"
+        },
+        {
+            "domain": "18_controllers_automation",
+            "subdomain": "ghl_logic",
+            "priority": "HIGH",
+            "safety_critical": true,
+            "notes": "CO2 solenoid failsafe logic and calcium reactor safety gates"
+        }
+    ],
+    "models_that_should_have_been_used": {
+        "GENERATE": "Claude Sonnet 4.5",
+        "CRITIQUE": "Gemini 3 Pro High",
+        "REFINE": "Claude Opus 4.5 (Thinking)",
+        "COMPILE": "Gemini 3 Flash"
+    },
+    "model_actually_used": "Gemini Flash (all phases)",
+    "status": "PENDING_REDO"
+}

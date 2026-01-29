@@ -1,0 +1,9 @@
+{
+    "models": {
+        "research": "gemini-pro",
+        "critique": "gemini-pro",
+        "refinement": "gemini-pro",
+        "synthesis": "gemini-pro"
+    },
+    "allocation_strategy": "dynamic"
+}

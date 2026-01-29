@@ -1,0 +1,85 @@
+{
+    "experiment_subject": "01_water_chemistry/major_elements",
+    "purpose": "Compare pipeline configurations to optimize quality vs cost",
+    "baseline_date": "2026-01-27",
+    "experiments": [
+        {
+            "id": "EXP-001",
+            "name": "Baseline 4-Agent Pipeline",
+            "config": {
+                "generator": "claude-sonnet-4.5",
+                "critic": "gemini-3-pro-high",
+                "refiner": "claude-opus-4.5-thinking",
+                "compiler": "gemini-3-flash"
+            },
+            "status": "pending",
+            "metrics": {
+                "quality_score": null,
+                "safety_compliance": null,
+                "discovery_first_score": null,
+                "source_coverage": null,
+                "gaps_identified": null,
+                "token_cost": null,
+                "wall_time_minutes": null
+            },
+            "notes": ""
+        },
+        {
+            "id": "EXP-002",
+            "name": "Same-Family Critic",
+            "config": {
+                "generator": "claude-sonnet-4.5",
+                "critic": "claude-sonnet-4.5",
+                "refiner": "claude-opus-4.5-thinking",
+                "compiler": "gemini-3-flash"
+            },
+            "status": "pending",
+            "metrics": {}
+        },
+        {
+            "id": "EXP-003",
+            "name": "Thinking Model Critic",
+            "config": {
+                "generator": "claude-sonnet-4.5",
+                "critic": "claude-opus-4.5-thinking",
+                "refiner": "claude-opus-4.5-thinking",
+                "compiler": "gemini-3-flash"
+            },
+            "status": "pending",
+            "metrics": {}
+        },
+        {
+            "id": "EXP-004",
+            "name": "Consolidated 3-Agent",
+            "config": {
+                "generator_with_self_critique": "claude-sonnet-4.5",
+                "refiner": "claude-opus-4.5-thinking",
+                "compiler": "gemini-3-flash"
+            },
+            "status": "pending",
+            "metrics": {}
+        },
+        {
+            "id": "EXP-005",
+            "name": "Double Critic (Cross-Family)",
+            "config": {
+                "generator": "claude-sonnet-4.5",
+                "critic_1": "gemini-3-pro-high",
+                "critic_2": "claude-sonnet-4.5",
+                "refiner": "claude-opus-4.5-thinking",
+                "compiler": "gemini-3-flash"
+            },
+            "status": "pending",
+            "metrics": {}
+        }
+    ],
+    "metrics_definitions": {
+        "quality_score": "Manual assessment 1-10 of overall output quality",
+        "safety_compliance": "PASS/FAIL - any TIER 1 violations?",
+        "discovery_first_score": "1-10 rating of biological WHY before technical HOW",
+        "source_coverage": "Count of unique sources cited",
+        "gaps_identified": "Count of [GAP] flags in output",
+        "token_cost": "Total tokens used across all agents",
+        "wall_time_minutes": "Total time from start to final output"
+    }
+}
