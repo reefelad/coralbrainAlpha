@@ -1,0 +1,52 @@
+{
+    "version": "2.0",
+    "created": "2026-01-30T05:10:00+08:00",
+    "last_updated": "2026-01-30T05:10:00+08:00",
+    "sources": {
+        "triton_official": {
+            "tier": 1,
+            "reliability_score": 0.95,
+            "times_cited": 0,
+            "times_verified": 0,
+            "times_contradicted": 0,
+            "url_pattern": "triton-lab.de",
+            "notes": "Gold standard for ICP interpretation and methodology"
+        },
+        "randy_holmes_farley": {
+            "tier": 1,
+            "reliability_score": 0.95,
+            "times_cited": 0,
+            "times_verified": 0,
+            "times_contradicted": 0,
+            "url_pattern": "reef2reef.com/ams/authors/randy-holmes-farley",
+            "notes": "Reef chemistry expert, peer-reviewed quality"
+        },
+        "brs_investigates": {
+            "tier": 2,
+            "reliability_score": 0.85,
+            "times_cited": 0,
+            "times_verified": 0,
+            "times_contradicted": 0,
+            "url_pattern": "bulkreefsupply.com",
+            "notes": "Well-researched video series with data"
+        },
+        "reef2reef_verified": {
+            "tier": 2,
+            "reliability_score": 0.75,
+            "times_cited": 0,
+            "times_verified": 0,
+            "times_contradicted": 0,
+            "url_pattern": "reef2reef.com",
+            "notes": "Expert posts - verify author credentials"
+        },
+        "youtube_general": {
+            "tier": 3,
+            "reliability_score": 0.5,
+            "times_cited": 0,
+            "times_verified": 0,
+            "times_contradicted": 0,
+            "url_pattern": "youtube.com",
+            "notes": "Hobbyist content - cross-reference before citing"
+        }
+    }
+}

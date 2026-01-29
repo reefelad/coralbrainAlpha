@@ -1,0 +1,24 @@
+{
+    "version": "1.0",
+    "created": "2026-01-30T05:24:00+08:00",
+    "description": "Reference manifest extracted from MARLL pipeline outputs",
+    "sources": {},
+    "credibility_tiers": {
+        "TIER-1": {
+            "description": "Gold standard - peer-reviewed, official documentation",
+            "trust_level": 0.95
+        },
+        "TIER-2": {
+            "description": "Silver standard - expert content, verified posts",
+            "trust_level": 0.80
+        },
+        "TIER-3": {
+            "description": "Bronze standard - forums, YouTube, blogs",
+            "trust_level": 0.50
+        },
+        "ANECDOTAL": {
+            "description": "Single-person claims, unverified",
+            "trust_level": 0.20
+        }
+    }
+}

@@ -24,6 +24,7 @@ Be thorough. Be skeptical. Be specific. This knowledge will train an AI that adv
 ## Load Core Skill First
 
 Always load coralbrainlab-core to reference:
+
 - Safety constraint tiers (TIER 1/2/3)
 - Source tiering system
 - Discovery First requirements
@@ -34,12 +35,14 @@ Always load coralbrainlab-core to reference:
 ### 1. SAFETY AUDIT (HIGHEST PRIORITY)
 
 **Check against TIER 1 Absolutes:**
+
 - [ ] No recommendations for Alk change >2.0 dKH/day
 - [ ] No temperature recommendations outside 20-32°C
 - [ ] No pH recommendations outside 7.5-8.8
 - [ ] No salinity recommendations outside 28-40 ppt
 
 **Check against TIER 2 Defaults:**
+
 - [ ] Alk change recommendations ≤1.0 dKH/day (or flagged if higher)
 - [ ] Ca change recommendations ≤20 ppm/day
 - [ ] Mg change recommendations ≤100 ppm/day
@@ -62,7 +65,37 @@ Always load coralbrainlab-core to reference:
 - [ ] No factual errors or misconceptions
 - [ ] Sources actually support the claims made
 
-### 4. SOURCE QUALITY CHECK
+### 4. SOURCE VERIFICATION (MANDATORY)
+
+> [!CAUTION]
+> Generator MUST include "Retrieved Sources" table. If missing = AUTOMATIC REJECT.
+
+**Check 1: Retrieved Sources Table Exists**
+
+- [ ] "Retrieved Sources" section present with actual URLs
+- [ ] At least 3 sources listed with dates
+- If missing: **Verdict = REJECT**, reason: "No evidence of web research"
+
+**Check 2: Verify At Least 2 Sources**
+For the top 2 claimed sources:
+
+1. Visit the URL using `read_url_content` tool
+2. Verify the claim matches what the source actually says
+3. Note discrepancies in your critique
+
+**Check 3: Update Source Reliability**
+After verification, update `orchestration/source_reliability.json`:
+
+- If source verified correctly: increment `times_verified`
+- If source didn't support claim: increment `times_contradicted`
+- Recalculate `reliability_score` = verified / (verified + contradicted)
+
+**Check 4: Cross-Reference Learning Journal**
+
+- Read `orchestration/learning_journal.json`
+- Flag if this subdomain contradicts previous insights with [CONFLICT]
+
+**Standard Source Quality Checks:**
 
 - [ ] Source tiers correctly applied
 - [ ] High-confidence claims have TIER-1/2 sources
@@ -97,14 +130,17 @@ Always load coralbrainlab-core to reference:
 # Critique Report: [SUBDOMAIN NAME]
 
 ## Safety Audit: [PASS / VIOLATIONS FOUND]
+
 [List any safety violations - these are automatic REJECT]
 
 ## Quality Score: [X/10]
 
 ## Summary
+
 [2-3 sentence overall evaluation]
 
 ## Critical Issues (Must Fix)
+
 1. **[Issue]**
    - Location: [Section]
    - Problem: [Specific description]
@@ -112,15 +148,18 @@ Always load coralbrainlab-core to reference:
    - Safety impact: [If applicable]
 
 ## Important Issues (Should Fix)
+
 1. **[Issue]**
    - Location: [Section]
    - Problem: [Description]
    - Suggested fix: [Recommendation]
 
 ## Minor Issues (Nice to Fix)
+
 - [Issue] — [Location]
 
 ## Verification Checklist
+
 - [ ] Safety TIER 1: [PASS/FAIL]
 - [ ] Triton alignment: [PASS/FAIL]
 - [ ] Source quality: [PASS/FAIL]
@@ -133,6 +172,7 @@ Always load coralbrainlab-core to reference:
 **Reasoning:** [Brief explanation]
 
 **Priority Fixes for Refiner:**
+
 1. [Most critical]
 2. [Second priority]
 3. [Third priority]
@@ -141,16 +181,19 @@ Always load coralbrainlab-core to reference:
 ## Verdicts
 
 **PASS** (Score 8-10)
+
 - No safety issues
 - Minor issues only
 - Proceed to Refiner
 
 **REVISE** (Score 5-7)
+
 - No TIER 1 safety violations
 - Significant but fixable issues
 - Refiner must address all Critical/Important issues
 
 **REJECT** (Score 1-4)
+
 - Safety violations found
 - Fundamental accuracy problems
 - Return to Generator with specific guidance
@@ -158,6 +201,7 @@ Always load coralbrainlab-core to reference:
 ## Output Location
 
 Save your critique to:
+
 ```
 outputs/critiqued/[domain_id]/[subdomain_id]_critique.md
 ```
