@@ -4,6 +4,21 @@
 
 ---
 
+## 🚀 One-Line Setup (After Git Clone)
+
+```powershell
+# From project root - opens workspace in VS Code with Agent Manager ready
+code coralbrainAlpha.code-workspace
+```
+
+Or run the full setup script:
+
+```powershell
+.\scripts\setup.ps1
+```
+
+---
+
 ## Quick Start (5 Minutes)
 
 1. **Open VS Code** with `coralbrainlab` folder
