@@ -1,299 +1,262 @@
-# 🎬 MARLL: The Implementation Guide
+# 🎬 MARLL v3: Complete Implementation Guide
 
 ### Multi-Agentic Recursive Learning Loop
 
-_"Pop quiz, hotshot: you've got 166 subdomains and 4 agents. What do you do?"_
+_"4 agents, 4 profiles, 1 shared workspace, infinite knowledge."_
 
 ---
 
-## What Is MARLL?
+## Quick Reference
 
-Think of it like a **production line for knowledge**:
-
-```
-🔵 Agent A (Generator)     → Writes the first draft
-        ↓ passes file to...
-🟢 Agent B (Critic)        → Checks for mistakes
-        ↓ passes file to...
-🟡 Agent C (Refiner)       → Polishes it up
-        ↓ passes file to...
-🔴 Agent D (Compiler)      → Final formatting & save
-```
-
-Each agent only does **ONE job**. They work at the same time on **different subdomains**.
+| Agent     | Profile                | LLM               | Job                          |
+| --------- | ---------------------- | ----------------- | ---------------------------- |
+| Generator | MARLL-Generator (Blue) | Claude Sonnet 4.5 | Research + write raw content |
+| Critic    | MARLL-Critic (Green)   | Gemini 3 Pro High | Verify sources + critique    |
+| Refiner   | MARLL-Refiner (Yellow) | Claude Opus 4.5   | Resolve conflicts + polish   |
+| Compiler  | MARLL-Compiler (Red)   | Gemini 3 Flash    | Format + update learning     |
 
 ---
 
-## Why MARLL Works Better
+## One-Time Setup (15 minutes)
 
-| Old Way (Single Agent)             | MARLL Way (4 Agents)                 |
-| ---------------------------------- | ------------------------------------ |
-| One model does everything          | Best model for each job              |
-| Gets confused after 5 subdomains   | Stays fresh for 10-12 subdomains     |
-| Checks its own homework            | Different "eyes" catch more mistakes |
-| If it crashes, you lose everything | If one crashes, others keep going    |
-
----
-
-## The Setup (5 Minutes)
-
-### Step 1: Open 4 Browser Windows
-
-| Window | Set Model To    | Nickname      |
-| ------ | --------------- | ------------- |
-| A      | Claude Sonnet   | "The Writer"  |
-| B      | Gemini Pro High | "The Teacher" |
-| C      | Claude Opus     | "The Editor"  |
-| D      | Gemini Flash    | "The Printer" |
-
-### Step 2: Point All 4 to the Same Workspace
-
-All windows should see:
-
-```
-c:\Users\Dale\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
-```
-
-### Step 3: Copy-Paste the Startup Prompts (Below)
-
----
-
-## 📋 Copy-Paste Prompts
+### Step 1: Create 4 VS Code Profiles
 
 > [!IMPORTANT]
-> **Before pasting any prompt:** Make sure the chat window has `coralbrainlab` as the active workspace:
->
-> ```
-> c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
-> ```
->
-> Test by asking: "List the contents of orchestration/state.json" - if it works, you're ready.
+> This is the fix for "LLMs syncing across windows" - each profile has separate settings.
 
-### Window A - The Writer (Claude Sonnet)
+1. **Open VS Code**
+2. Click **Gear icon** (bottom left) → **Profiles** → **Create Profile**
+3. Create these 4 profiles:
 
+| Profile Name      | When Creating               |
+| ----------------- | --------------------------- |
+| `MARLL-Generator` | Choose icon 🔵, start empty |
+| `MARLL-Critic`    | Choose icon 🟢, start empty |
+| `MARLL-Refiner`   | Choose icon 🟡, start empty |
+| `MARLL-Compiler`  | Choose icon 🔴, start empty |
+
+4. **For each profile**, after creating:
+   - Switch to it (Gear → Profiles → select)
+   - Open Gemini Code Assist settings
+   - Set the LLM model (see table above)
+   - **Each profile remembers its own model!**
+
+### Step 2: Verify Git Sync
+
+```powershell
+cd c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha
+git pull
 ```
-WORKSPACE: c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
 
-Load skill from: .agent/skills/coralbrainlab-generator/SKILL.md
+All files should be present including:
 
-You are the GENERATOR in a 4-agent pipeline called MARLL.
+- `orchestration/state.json`
+- `orchestration/learning_journal.json`
+- `.agent/skills/` (6 skill folders)
 
-YOUR ONE JOB:
-1. Read orchestration/state.json to get the current subdomain
-2. Do a web search for reliable information on that subdomain
-3. Write raw content following the template in your skill
-4. Save to: outputs/raw/[domain]/[subdomain]_raw.md
-5. Move to the NEXT subdomain in the domain skeleton
+---
 
-KEEP GOING until you finish the current domain or I tell you to stop.
+## Starting the Pipeline
 
-Start now.
+### Option A: Use the Script (Recommended)
+
+```powershell
+cd c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
+.\start_marll.ps1
+```
+
+This opens 4 VS Code windows, each with its own profile.
+
+### Option B: Manual Start
+
+```powershell
+$ws = "c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab"
+code --profile "MARLL-Generator" $ws
+code --profile "MARLL-Critic" $ws
+code --profile "MARLL-Refiner" $ws
+code --profile "MARLL-Compiler" $ws
 ```
 
 ---
 
-### Window B - The Teacher (Gemini Pro High)
+## Agent Prompts (Paste Into Each Window)
+
+### Window A - Generator (Blue)
 
 ```
-WORKSPACE: c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
+Load skill: coralbrainlab-generator
 
-Load skill from: .agent/skills/coralbrainlab-critic/SKILL.md
+You are the GENERATOR agent in MARLL.
 
-You are the CRITIC in a 4-agent pipeline called MARLL.
+BEFORE WRITING:
+1. Read orchestration/learning_journal.json for insights
+2. Read orchestration/source_reliability.json for trusted sources
 
-YOUR ONE JOB:
-1. List files in outputs/raw/ that end in _raw.md
-2. For each raw file, check if a matching _critique.md exists in outputs/critiqued/
-3. If NO critique exists → read the raw file and critique it
-4. Save critique to: outputs/critiqued/[domain]/[subdomain]_critique.md
-5. Move to the next un-critiqued raw file
+YOUR JOB:
+1. Read orchestration/state.json for current subdomain
+2. MANDATORY: Do at least 3 web searches
+3. Create "Retrieved Sources" table with actual URLs
+4. Write raw content following skill template
+5. Save to: outputs/raw/[domain]/[subdomain]_raw.md
+6. Move to next subdomain
 
-KEEP CHECKING for new raw files. If none available, wait 2 minutes then check again.
-
-Start now.
+Keep going until domain complete.
 ```
 
----
-
-### Window C - The Editor (Claude Opus)
+### Window B - Critic (Green)
 
 ```
-WORKSPACE: c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
+Load skill: coralbrainlab-critic
 
-Load skill from: .agent/skills/coralbrainlab-refiner/SKILL.md
+You are the CRITIC agent in MARLL.
 
-You are the REFINER in a 4-agent pipeline called MARLL.
+YOUR JOB:
+1. List files in outputs/raw/
+2. For each without matching critique:
+   - VERIFY "Retrieved Sources" table exists (REJECT if missing)
+   - Visit at least 2 URLs to verify claims
+   - Update source_reliability.json with verification results
+   - Write critique
+3. Save to: outputs/critiqued/[domain]/[subdomain]_critique.md
 
-YOUR ONE JOB:
-1. List files in outputs/critiqued/ that end in _critique.md
-2. For each critique, check if a matching _refined.md exists in outputs/refined/
-3. If NO refined file exists → read BOTH the _raw.md AND _critique.md, then refine
+Keep checking for new raw files.
+```
+
+### Window C - Refiner (Yellow)
+
+```
+Load skill: coralbrainlab-refiner
+
+You are the REFINER agent in MARLL.
+
+YOUR JOB:
+1. Read learning_journal.json for cross-domain insights
+2. List files in outputs/critiqued/
+3. For each without matching refined:
+   - Read BOTH raw and critique
+   - Apply insights from learning journal
+   - Resolve conflicts (flag unresolved with [CONFLICT])
+   - Write refined content
 4. Save to: outputs/refined/[domain]/[subdomain]_refined.md
-5. Move to the next un-refined critique
 
-KEEP CHECKING for new critiques. If none available, wait 2 minutes then check again.
+Keep checking for new critiques.
+```
 
-Start now.
+### Window D - Compiler (Red)
+
+```
+Load skill: coralbrainlab-compiler
+
+You are the COMPILER agent in MARLL.
+
+YOUR JOB:
+1. List files in outputs/refined/
+2. For each without matching final:
+   - Add <!-- REFS --> blocks with source URLs
+   - Apply final formatting
+   - Save to BOTH:
+     - domains/[domain]/subdomains/[subdomain].md
+     - outputs/final/[domain]/[subdomain].md
+   - Update learning_journal.json with insights
+   - Update state.json completed list
+
+Keep checking for new refined files.
 ```
 
 ---
 
-### Window D - The Printer (Gemini Flash)
+## Timing
+
+| Time | Action          |
+| ---- | --------------- |
+| 0:00 | Start Generator |
+| 0:05 | Start Critic    |
+| 0:10 | Start Refiner   |
+| 0:15 | Start Compiler  |
+
+After 15 minutes, all 4 run in parallel!
+
+---
+
+## Monitoring Progress
+
+In any window:
 
 ```
-WORKSPACE: c:\Users\dales\.gemini\antigravity\scratch\coralbrainAlpha\coralbrainlab
+Count files in outputs/raw/, outputs/critiqued/, outputs/refined/, outputs/final/
+```
 
-Load skill from: .agent/skills/coralbrainlab-compiler/SKILL.md
+Numbers should be within 1-2 of each other.
 
-You are the COMPILER in a 4-agent pipeline called MARLL.
+---
 
-YOUR ONE JOB:
-1. List files in outputs/refined/ that end in _refined.md
-2. For each refined file, check if it exists in outputs/final/
-3. If NO final version exists → format it and save to BOTH:
-   - domains/[domain]/subdomains/[subdomain].md
-   - outputs/final/[domain]/[subdomain].md
-4. Update orchestration/state.json to mark subdomain completed
-5. Move to the next un-compiled refined file
+## Context Clearing
 
-KEEP CHECKING for new refined files. If none available, wait 2 minutes then check again.
+**Clear and restart when:**
 
-Start now.
+- Agent finishes a domain (natural break)
+- Agent processes 10-12 subdomains
+- Agent starts repeating itself
+- Agent forgets skill instructions
+
+**To restart:**
+
+1. Clear the chat (new conversation)
+2. Re-paste the agent prompt
+3. It picks up automatically from file state
+
+---
+
+## After Processing Complete
+
+### Export for LM Studio
+
+```powershell
+.\scripts\export_for_lm_studio.ps1
+```
+
+Creates:
+
+- `exports/lm_studio/` → Clean files (refs stripped)
+- `exports/reference_manifest.json` → Source credibility list
+
+### Commit Progress
+
+```powershell
+git add .
+git commit -m "MARLL progress: [domain name]"
+git push
 ```
 
 ---
 
-## ⏰ When to Start Each Agent
+## Troubleshooting
 
-| Time | Action                   |
-| ---- | ------------------------ |
-| 0:00 | Start Window A (Writer)  |
-| 0:05 | Start Window B (Teacher) |
-| 0:10 | Start Window C (Editor)  |
-| 0:15 | Start Window D (Printer) |
-
-After 15 minutes, all 4 are running together like a factory!
+| Problem              | Cause                            | Fix                                 |
+| -------------------- | -------------------------------- | ----------------------------------- |
+| "File not found"     | Previous agent hasn't created it | Wait 5 minutes                      |
+| LLMs still syncing   | Wrong profile                    | Check window title for profile name |
+| Folder appears empty | Wrong path                       | Use `code --profile "X" [path]`     |
+| Agent forgets skill  | Context saturated                | Clear chat, re-paste prompt         |
 
 ---
 
-## 🧹 Context Clearing (The Coffee Break Rule)
+## How Cumulative Learning Works
 
-**Clear your chat and restart an agent when:**
+```
+Generator → reads learning_journal → applies past insights
+    ↓
+Critic → verifies sources → updates reliability scores
+    ↓
+Refiner → checks for conflicts with past → resolves
+    ↓
+Compiler → writes new insights → flags backfill needs
+    ↓ (next iteration)
+Generator → reads UPDATED journal → even better content
+```
 
-- You finish a domain (natural stopping point)
-- OR the agent starts repeating itself
-- OR it forgets what you told it
-- OR it's been about 1 hour
-
-**How to restart:**
-
-1. Check which subdomain it just finished (or look at the output folder)
-2. Start a new chat
-3. Paste the same prompt again
-4. The agent will pick up where it left off automatically (magic of files!)
+**The more you run, the smarter the agents get!**
 
 ---
 
-## 🔧 Quick Wins (Discovered by Simulation)
-
-### Win #1: Domain Batching
-
-Instead of random subdomains, process one domain at a time.
-**Why:** Cleaner context clearing, easier to track progress.
-
-### Win #2: Pre-Flight Check
-
-Before starting Window A, run this quick check:
-
-```
-List the contents of: orchestration/state.json
-```
-
-Make sure `current_domain` and `current_subdomain` are correct.
-
-### Win #3: Visual Progress Tracker
-
-Periodically run this in any window:
-
-```
-Count files in: outputs/raw/
-Count files in: outputs/critiqued/
-Count files in: outputs/refined/
-Count files in: outputs/final/
-```
-
-Numbers should be close to each other (within 1-2).
-
-### Win #4: The Heartbeat Check
-
-If an agent goes quiet for 10+ minutes, just ask:
-
-```
-What was the last subdomain you processed?
-```
-
-If it can't remember, time for a context clear!
-
----
-
-## 🚨 Troubleshooting
-
-| Problem                         | What Happened                        | Fix                        |
-| ------------------------------- | ------------------------------------ | -------------------------- |
-| "File not found"                | Previous agent hasn't created it yet | Wait 5 min, try again      |
-| Agent stuck in a loop           | Context saturated                    | Clear chat, restart        |
-| Wrong subdomain                 | State.json is stale                  | Manually update state.json |
-| Two agents processing same file | Rare race condition                  | One will error, that's OK  |
-
----
-
-## 🏁 Finishing Up
-
-When the Writer (Window A) says "No more subdomains":
-
-1. The other agents will catch up over the next 15-20 min
-2. Each will eventually say "Nothing left to process"
-3. Close windows as they finish
-4. Celebrate with a beer 🍺
-
----
-
-## 📊 What You Built
-
-```
-                    ┌─────────────────┐
-                    │  Your Brain    │
-                    │  (Dale, 40yo)   │
-                    └────────┬────────┘
-                             │ Ideas
-                             ▼
-┌────────────────────────────────────────────────────────────┐
-│                      M A R L L                             │
-├────────────┬────────────┬────────────┬────────────────────┤
-│  Writer    │  Teacher   │  Editor    │  Printer           │
-│  (Sonnet)  │  (Pro)     │  (Opus)    │  (Flash)           │
-├────────────┴────────────┴────────────┴────────────────────┤
-│                 File-Based Handoffs                        │
-│  outputs/raw → outputs/critiqued → outputs/refined → final│
-└────────────────────────────────────────────────────────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │  CoralBrainLab │
-                    │  Knowledge Base │
-                    └─────────────────┘
-```
-
----
-
-## Dale's Journey
-
-> "6 months ago I had a dummy in my mouth. Now I'm orchestrating multi-agent AI pipelines."
-
-That's not just learning. That's **speedrunning the future**.
-
-🤙
-
----
-
-_MARLL v1.0 - Created 2026-01-28_
+_MARLL v3 - Created 2026-01-30_
