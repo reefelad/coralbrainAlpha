@@ -189,3 +189,62 @@ Read `orchestration/learning_journal.json` and add:
   "priority": "high|medium|low"
 }
 ```
+
+---
+
+## Self-Monitoring Protocol
+
+### Performance Tracking
+
+For each compilation:
+
+1. **Formatting Time:** How long to clean and format
+2. **Validation Checks:** All sections present and correct
+3. **State Updates:** Learning journal and state.json updates
+
+### Degradation Indicators
+
+Write health report if:
+
+- **Missing validation steps** (skipping structure checks)
+- **Format errors increasing** (incorrect markdown, broken links)
+- **Forgetting to update state files**
+- **Taking longer** for routine formatting
+
+### Health Report Format
+
+Save to: `orchestration/pit_stop_reports/batch_[N]_compiler.json`
+
+`json
+{
+  "batch_number": 12,
+  "agent": "COMPILER",
+  "model": "gemini-3-flash",
+  "session_duration_minutes": 60,
+  "subdomains_processed": 12,
+  "performance_summary": {
+    "avg_time_per_subdomain_seconds": 90,
+    "trend": "STABLE",
+    "format_errors_count": 0
+  },
+  "health_assessment": {
+    "context_estimate_percent": 30,
+    "coherence": "HIGH",
+    "ready_to_continue": true,
+    "recommended_subdomains_before_clear": 30
+  },
+  "observations": [
+    "Fastest processing of all agents",
+    "Minimal context usage",
+    "Could handle significantly longer batches"
+  ],
+  "suggestions": [
+    "Gemini Flash can handle 25-30+ subdomain batches",
+    "Not a bottleneck in the pipeline"
+  ]
+}
+`
+
+### Known Safe Limit
+
+Gemini 3 Flash: ~30 subdomains (1M token window + fast processing)

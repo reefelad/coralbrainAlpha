@@ -32,7 +32,7 @@ Or run the full setup script:
 | REFINER           | Claude Opus 4.5   | coralbrainlab-refiner   |
 | COMPILER          | Gemini 3 Flash    | coralbrainlab-compiler  |
 
-4. **Paste prompts** (see below) - stagger 5 min apart
+4. **Paste prompts** (see below) - start all simultaneously
 5. **Monitor** by switching between conversations
 
 ---
@@ -105,14 +105,98 @@ Switch between conversations to check progress:
 
 ---
 
-## Context Clearing
+## Polling & Collision Prevention
 
-When an agent gets confused or slow:
+**How it works:**
 
-1. Clear that conversation
-2. Start a new one with same model
-3. Re-paste the prompt
-4. Agent picks up from file state
+- Each agent checks for files before processing
+- CRITIC: Polls `outputs/raw/` for new files to critique
+- REFINER: Polls `outputs/critiqued/` for new critiques
+- COMPILER: Polls `outputs/refined/` for new refined files
+
+**Why it's better than staggering:**
+
+- ✅ No race conditions (file-based locking)
+- ✅ Faster (all agents start immediately)
+- ✅ Self-healing (auto-resume from file state)
+
+**Monitoring Polling:**
+
+```powershell
+# See files flowing through pipeline
+Get-ChildItem outputs/raw/*.md | Measure-Object
+Get-ChildItem outputs/critiqued/*.md | Measure-Object
+Get-ChildItem outputs/refined/*.md | Measure-Object
+Get-ChildItem outputs/final/*.md | Measure-Object
+```
+
+---
+
+## Agent Health Monitoring
+
+### Self-Monitoring Metrics
+
+Each agent tracks:
+
+- ⏱️ Processing time per subdomain
+- 📈 Performance trend (STABLE/DEGRADING)
+- 🧠 Estimated context usage
+- ✅ Quality indicators
+
+### Health Reports
+
+After each batch, agents write to:
+`orchestration/pit_stop_reports/batch_[N]_[agent].json`
+
+### Pit Stop Analysis
+
+Master orchestrator reads all reports and generates:
+`orchestration/pit_stop_analysis_batch_[N].md`
+
+**Contains:**
+
+- Performance comparison across agents
+- Bottleneck identification
+- Optimal batch size calculation
+- Model-specific recommendations
+
+---
+
+## Dynamic Batch Sizing
+
+**Old Way:** Fixed intervals, manual adjustment
+
+**New Way:** Data-driven optimization
+
+```
+optimal_interval = MIN(all_agent_capacities) * safety_margin
+```
+
+**Result:** System learns optimal batch sizes per model
+
+---
+
+## Context Management
+
+### When to Clear
+
+Each agent has different tolerances:
+
+| Agent     | Model         | Safe Capacity | Signs of Degradation  |
+| --------- | ------------- | ------------- | --------------------- |
+| Generator | Claude Sonnet | ~18 subs      | Repeating content     |
+| Critic    | Gemini Pro    | ~25 subs      | Missing source checks |
+| Refiner   | Claude Opus   | ~15 subs      | Forgetting critique   |
+| Compiler  | Gemini Flash  | ~30 subs      | Format errors         |
+
+### How to Clear (< 30 seconds)
+
+1. Note last completed subdomain (or check output folder)
+2. Clear conversation in Agent Manager
+3. Re-paste agent prompt
+4. Agent auto-resumes from file state
+
+**Why it's safe:** All state in FILES, not conversation memory
 
 ---
 

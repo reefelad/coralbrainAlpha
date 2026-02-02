@@ -1,486 +1,514 @@
 {
-    "project": "CoralBrainLab",
-    "version": "3.0",
-    "created": "2026-01-27T00:20:06+08:00",
-    "last_updated": "2026-01-28T17:38:38+08:00",
-    "current_domain": "18_controllers_automation",
-    "current_subdomain": "ghl_logic",
-    "current_phase": "GENERATE",
-    "progress": {
-        "completed": 95,
-        "remaining": 71
+  "project": "CoralBrainLab",
+  "version": "3.0",
+  "created": "2026-01-27T00:20:06+08:00",
+  "last_updated": "2026-01-28T17:38:38+08:00",
+  "current_domain": "18_controllers_automation",
+  "current_subdomain": "ghl_logic",
+  "current_phase": "GENERATE",
+  "progress": {
+    "completed": 95,
+    "remaining": 71
+  },
+  "batch": {
+    "current": 12
+  },
+  "subdomains_completed": 95,
+  "subdomains_total": 166,
+  "triton_anchor_counter": 2,
+  "last_triton_anchor": "2026-01-28T17:38:38+08:00",
+  "errors": [],
+  "completed": [
+    {
+      "domain": "18_controllers_automation",
+      "subdomain": "hydros_configuration",
+      "timestamp": "2026-01-28T17:51:41+08:00"
     },
-    "batch": {
-        "current": 12
+    {
+      "domain": "18_controllers_automation",
+      "subdomain": "apex_programming",
+      "timestamp": "2026-01-28T17:51:41+08:00"
     },
-    "subdomains_completed": 95,
-    "subdomains_total": 166,
-    "triton_anchor_counter": 2,
-    "last_triton_anchor": "2026-01-28T17:38:38+08:00",
-    "errors": [],
-    "completed": [
-        {
-            "domain": "18_controllers_automation",
-            "subdomain": "hydros_configuration",
-            "timestamp": "2026-01-28T17:51:41+08:00"
-        },
-        {
-            "domain": "18_controllers_automation",
-            "subdomain": "apex_programming",
-            "timestamp": "2026-01-28T17:51:41+08:00"
-        },
-        {
-            "domain": "17_filtration_equipment",
-            "subdomain": "uv_sterilizers",
-            "timestamp": "2026-01-28T17:38:38+08:00"
-        },
-        {
-            "domain": "17_filtration_equipment",
-            "subdomain": "media_reactors",
-            "timestamp": "2026-01-28T17:38:38+08:00"
-        },
-        {
-            "domain": "17_filtration_equipment",
-            "subdomain": "algae_scrubbers",
-            "timestamp": "2026-01-28T17:38:38+08:00"
-        },
-        {
-            "domain": "17_filtration_equipment",
-            "subdomain": "fleece_rollers",
-            "timestamp": "2026-01-28T17:38:38+08:00"
-        },
-        {
-            "domain": "17_filtration_equipment",
-            "subdomain": "skimmer_tuning",
-            "timestamp": "2026-01-28T17:38:38+08:00"
-        },
-        {
-            "domain": "16_lighting_systems",
-            "subdomain": "cooling_ventilation",
-            "timestamp": "2026-01-28T16:35:25+08:00"
-        },
-        {
-            "domain": "16_lighting_systems",
-            "subdomain": "mounting_solutions",
-            "timestamp": "2026-01-28T16:35:25+08:00"
-        },
-        {
-            "domain": "16_lighting_systems",
-            "subdomain": "t5_hybrid",
-            "timestamp": "2026-01-28T16:26:02+08:00"
-        },
-        {
-            "domain": "16_lighting_systems",
-            "subdomain": "led_fixtures",
-            "timestamp": "2026-01-28T16:26:02+08:00"
-        },
-        {
-            "domain": "16_lighting_systems",
-            "subdomain": "photosynthetic_energy",
-            "timestamp": "2026-01-28T16:26:02+08:00"
-        },
-        {
-            "domain": "15_pumps",
-            "subdomain": "pump_maintenance",
-            "timestamp": "2026-01-28T17:00:00+08:00"
-        },
-        {
-            "domain": "15_pumps",
-            "subdomain": "wavemakers_flow",
-            "timestamp": "2026-01-28T16:55:00+08:00"
-        },
-        {
-            "domain": "15_pumps",
-            "subdomain": "return_pumps",
-            "timestamp": "2026-01-28T16:50:00+08:00"
-        },
-        {
-            "domain": "14_tanks_plumbing",
-            "subdomain": "drilling_techniques",
-            "timestamp": "2026-01-28T16:40:00+08:00"
-        },
-        {
-            "domain": "14_tanks_plumbing",
-            "subdomain": "bulkheads_seals",
-            "timestamp": "2026-01-28T16:35:00+08:00"
-        },
-        {
-            "domain": "14_tanks_plumbing",
-            "subdomain": "pipe_fittings",
-            "timestamp": "2026-01-28T16:30:00+08:00"
-        },
-        {
-            "domain": "14_tanks_plumbing",
-            "subdomain": "stand_structural",
-            "timestamp": "2026-01-28T16:25:00+08:00"
-        },
-        {
-            "domain": "14_tanks_plumbing",
-            "subdomain": "glass_acrylic",
-            "timestamp": "2026-01-28T16:20:00+08:00"
-        },
-        {
-            "domain": "13_system_design",
-            "subdomain": "material_selection",
-            "timestamp": "2026-01-28T14:50:00+08:00"
-        },
-        {
-            "domain": "13_system_design",
-            "subdomain": "electrical_safety",
-            "timestamp": "2026-01-28T14:45:00+08:00"
-        },
-        {
-            "domain": "13_system_design",
-            "subdomain": "plumbing_hydraulics",
-            "timestamp": "2026-01-28T14:40:00+08:00"
-        },
-        {
-            "domain": "13_system_design",
-            "subdomain": "sump_design",
-            "timestamp": "2026-01-28T14:36:00+08:00"
-        },
-        {
-            "domain": "13_system_design",
-            "subdomain": "overflow_mechanics",
-            "timestamp": "2026-01-28T01:45:00+08:00"
-        },
-        {
-            "domain": "12_propagation",
-            "subdomain": "fragging_tools",
-            "timestamp": "2026-01-28T01:40:00+08:00"
-        },
-        {
-            "domain": "12_propagation",
-            "subdomain": "sps_fragging",
-            "timestamp": "2026-01-28T01:41:00+08:00"
-        },
-        {
-            "domain": "12_propagation",
-            "subdomain": "lps_fragging",
-            "timestamp": "2026-01-28T01:42:00+08:00"
-        },
-        {
-            "domain": "12_propagation",
-            "subdomain": "soft_coral_fragging",
-            "timestamp": "2026-01-28T01:43:00+08:00"
-        },
-        {
-            "domain": "12_propagation",
-            "subdomain": "healing_protocols",
-            "timestamp": "2026-01-28T01:44:00+08:00"
-        },
-        {
-            "domain": "06_pests_diseases",
-            "subdomain": "quarantine_integration",
-            "timestamp": "2026-01-27T17:30:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "mechanical_filtration",
-            "timestamp": "2026-01-27T18:45:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "major_elements",
-            "timestamp": "2026-01-27T02:35:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "nutrients",
-            "timestamp": "2026-01-27T02:40:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "trace_elements",
-            "timestamp": "2026-01-27T02:45:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "stability_parameters",
-            "timestamp": "2026-01-27T02:50:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "parameter_interactions",
-            "timestamp": "2026-01-27T02:55:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "testing_measurement",
-            "timestamp": "2026-01-27T03:00:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "trend_analysis",
-            "timestamp": "2026-01-27T03:10:00+08:00"
-        },
-        {
-            "domain": "01_water_chemistry",
-            "subdomain": "safe_corrections",
-            "timestamp": "2026-01-27T03:20:00+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "par_spectrum",
-            "timestamp": "2026-01-27T03:30:00+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "photoperiod",
-            "timestamp": "2026-01-27T03:40:00+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "fixture_types",
-            "timestamp": "2026-01-27T03:45:00+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "mounting_placement",
-            "timestamp": "2026-01-27T03:08:39+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "acclimation",
-            "timestamp": "2026-01-27T03:08:39+08:00"
-        },
-        {
-            "domain": "02_lighting",
-            "subdomain": "coral_light_requirements",
-            "timestamp": "2026-01-27T13:44:47+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "turnover_volume",
-            "timestamp": "2026-01-27T13:57:20+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "flow_patterns",
-            "timestamp": "2026-01-27T14:15:00+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "boundary_layers",
-            "timestamp": "2026-01-27T14:30:00+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "placement_dead_spots",
-            "timestamp": "2026-01-27T14:50:00+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "pump_technologies",
-            "timestamp": "2026-01-27T15:00:00+08:00"
-        },
-        {
-            "domain": "03_flow_hydrodynamics",
-            "subdomain": "anemone_lps_protection",
-            "timestamp": "2026-01-27T15:30:00+08:00"
-        },
-        {
-            "domain": "04_coral_biology",
-            "subdomain": "anatomy_physiology",
-            "timestamp": "2026-01-27T15:35:00+08:00"
-        },
-        {
-            "domain": "04_coral_biology",
-            "subdomain": "calcification_process",
-            "timestamp": "2026-01-27T15:55:00+08:00"
-        },
-        {
-            "domain": "04_coral_biology",
-            "subdomain": "zooxanthellae_symbiosis",
-            "timestamp": "2026-01-27T16:20:00+08:00"
-        },
-        {
-            "domain": "04_coral_biology",
-            "subdomain": "metabolism_respiration",
-            "timestamp": "2026-01-27T14:48:00+08:00"
-        },
-        {
-            "domain": "04_coral_biology",
-            "subdomain": "skeletal_structure",
-            "timestamp": "2026-01-27T15:45:00+08:00"
-        },
-        {
-            "domain": "05_coral_nutrition",
-            "subdomain": "dissolved_organics",
-            "timestamp": "2026-01-27T16:15:00+08:00"
-        },
-        {
-            "domain": "05_coral_nutrition",
-            "subdomain": "particulate_feeding",
-            "timestamp": "2026-01-27T16:30:00+08:00"
-        },
-        {
-            "domain": "05_coral_nutrition",
-            "subdomain": "amino_acids",
-            "timestamp": "2026-01-27T16:45:00+08:00"
-        },
-        {
-            "domain": "05_coral_nutrition",
-            "subdomain": "target_feeding",
-            "timestamp": "2026-01-27T14:57:00+08:00"
-        },
-        {
-            "domain": "05_coral_nutrition",
-            "subdomain": "feeding_response",
-            "timestamp": "2026-01-27T15:15:00+08:00"
-        },
-        {
-            "domain": "06_pests_diseases",
-            "subdomain": "common_pests",
-            "timestamp": "2026-01-27T15:20:00+08:00"
-        },
-        {
-            "domain": "06_pests_diseases",
-            "subdomain": "disease_identification",
-            "timestamp": "2026-01-27T15:35:00+08:00"
-        },
-        {
-            "domain": "06_pests_diseases",
-            "subdomain": "treatment_dips",
-            "timestamp": "2026-01-27T15:43:00+08:00"
-        },
-        {
-            "domain": "06_pests_diseases",
-            "subdomain": "biological_controls",
-            "timestamp": "2026-01-27T16:00:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "biological_filtration",
-            "timestamp": "2026-01-27T18:30:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "chemical_filtration",
-            "timestamp": "2026-01-27T18:55:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "protein_skimming",
-            "timestamp": "2026-01-27T19:05:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "refugium_design",
-            "timestamp": "2026-01-27T19:15:00+08:00"
-        },
-        {
-            "domain": "07_filtration_science",
-            "subdomain": "cryptic_zones",
-            "timestamp": "2026-01-27T19:25:00+08:00"
-        },
-        {
-            "domain": "08_microbiology",
-            "subdomain": "bacterial_strains",
-            "timestamp": "2026-01-27T19:35:00+08:00"
-        },
-        {
-            "domain": "08_microbiology",
-            "subdomain": "carbon_dosing",
-            "timestamp": "2026-01-27T19:45:00+08:00"
-        },
-        {
-            "domain": "08_microbiology",
-            "subdomain": "cyano_management",
-            "timestamp": "2026-01-27T20:00:00+08:00"
-        },
-        {
-            "domain": "09_dosing_methods",
-            "subdomain": "dosing_principles",
-            "timestamp": "2026-01-27T19:30:00+08:00"
-        },
-        {
-            "domain": "09_dosing_methods",
-            "subdomain": "two_part_balling",
-            "timestamp": "2026-01-27T23:35:00+08:00"
-        },
-        {
-            "domain": "09_dosing_methods",
-            "subdomain": "calcium_reactors",
-            "timestamp": "2026-01-27T23:45:00+08:00"
-        },
-        {
-            "domain": "10_testing_protocols",
-            "subdomain": "manual_testing",
-            "timestamp": "2026-01-27T23:50:00+08:00"
-        },
-        {
-            "domain": "10_testing_protocols",
-            "subdomain": "automated_checkers",
-            "timestamp": "2026-01-27T23:58:00+08:00"
-        },
-        {
-            "domain": "10_testing_protocols",
-            "subdomain": "icp_sampling",
-            "timestamp": "2026-01-27T23:59:50+08:00"
-        },
-        {
-            "domain": "10_testing_protocols",
-            "subdomain": "microscope_analysis",
-            "timestamp": "2026-01-28T00:15:00+08:00"
-        },
-        {
-            "domain": "10_testing_protocols",
-            "subdomain": "log_keeping",
-            "timestamp": "2026-01-28T00:30:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "fish_quarantine",
-            "timestamp": "2026-01-28T00:45:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "coral_acclimation",
-            "timestamp": "2026-01-28T01:10:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "acclimation_logistics",
-            "timestamp": "2026-01-28T01:30:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "vendor_selection",
-            "timestamp": "2026-01-28T01:50:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "coral_quarantine",
-            "timestamp": "2026-01-28T01:55:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "invert_quarantine",
-            "timestamp": "2026-01-28T02:15:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "acclimation_methods",
-            "timestamp": "2026-01-28T02:24:00+08:00"
-        },
-        {
-            "domain": "11_acclimation_quarantine",
-            "subdomain": "pest_inspection",
-            "timestamp": "2026-01-28T02:30:00+08:00"
-        }
-    ],
-    "flagged_for_review": [],
-    "model_usage": {
-        "claude-sonnet-4.5": 10,
-        "claude-opus-4.5-thinking": 11,
-        "gemini-3-pro-high": 10,
-        "gemini-3-pro-low": 0,
-        "gemini-3-flash": 11
+    {
+      "domain": "17_filtration_equipment",
+      "subdomain": "uv_sterilizers",
+      "timestamp": "2026-01-28T17:38:38+08:00"
     },
-    "settings": {
-        "triton_anchor_frequency": 5,
-        "auto_continue": true,
-        "pause_on_reject": true
+    {
+      "domain": "17_filtration_equipment",
+      "subdomain": "media_reactors",
+      "timestamp": "2026-01-28T17:38:38+08:00"
+    },
+    {
+      "domain": "17_filtration_equipment",
+      "subdomain": "algae_scrubbers",
+      "timestamp": "2026-01-28T17:38:38+08:00"
+    },
+    {
+      "domain": "17_filtration_equipment",
+      "subdomain": "fleece_rollers",
+      "timestamp": "2026-01-28T17:38:38+08:00"
+    },
+    {
+      "domain": "17_filtration_equipment",
+      "subdomain": "skimmer_tuning",
+      "timestamp": "2026-01-28T17:38:38+08:00"
+    },
+    {
+      "domain": "16_lighting_systems",
+      "subdomain": "cooling_ventilation",
+      "timestamp": "2026-01-28T16:35:25+08:00"
+    },
+    {
+      "domain": "16_lighting_systems",
+      "subdomain": "mounting_solutions",
+      "timestamp": "2026-01-28T16:35:25+08:00"
+    },
+    {
+      "domain": "16_lighting_systems",
+      "subdomain": "t5_hybrid",
+      "timestamp": "2026-01-28T16:26:02+08:00"
+    },
+    {
+      "domain": "16_lighting_systems",
+      "subdomain": "led_fixtures",
+      "timestamp": "2026-01-28T16:26:02+08:00"
+    },
+    {
+      "domain": "16_lighting_systems",
+      "subdomain": "photosynthetic_energy",
+      "timestamp": "2026-01-28T16:26:02+08:00"
+    },
+    {
+      "domain": "15_pumps",
+      "subdomain": "pump_maintenance",
+      "timestamp": "2026-01-28T17:00:00+08:00"
+    },
+    {
+      "domain": "15_pumps",
+      "subdomain": "wavemakers_flow",
+      "timestamp": "2026-01-28T16:55:00+08:00"
+    },
+    {
+      "domain": "15_pumps",
+      "subdomain": "return_pumps",
+      "timestamp": "2026-01-28T16:50:00+08:00"
+    },
+    {
+      "domain": "14_tanks_plumbing",
+      "subdomain": "drilling_techniques",
+      "timestamp": "2026-01-28T16:40:00+08:00"
+    },
+    {
+      "domain": "14_tanks_plumbing",
+      "subdomain": "bulkheads_seals",
+      "timestamp": "2026-01-28T16:35:00+08:00"
+    },
+    {
+      "domain": "14_tanks_plumbing",
+      "subdomain": "pipe_fittings",
+      "timestamp": "2026-01-28T16:30:00+08:00"
+    },
+    {
+      "domain": "14_tanks_plumbing",
+      "subdomain": "stand_structural",
+      "timestamp": "2026-01-28T16:25:00+08:00"
+    },
+    {
+      "domain": "14_tanks_plumbing",
+      "subdomain": "glass_acrylic",
+      "timestamp": "2026-01-28T16:20:00+08:00"
+    },
+    {
+      "domain": "13_system_design",
+      "subdomain": "material_selection",
+      "timestamp": "2026-01-28T14:50:00+08:00"
+    },
+    {
+      "domain": "13_system_design",
+      "subdomain": "electrical_safety",
+      "timestamp": "2026-01-28T14:45:00+08:00"
+    },
+    {
+      "domain": "13_system_design",
+      "subdomain": "plumbing_hydraulics",
+      "timestamp": "2026-01-28T14:40:00+08:00"
+    },
+    {
+      "domain": "13_system_design",
+      "subdomain": "sump_design",
+      "timestamp": "2026-01-28T14:36:00+08:00"
+    },
+    {
+      "domain": "13_system_design",
+      "subdomain": "overflow_mechanics",
+      "timestamp": "2026-01-28T01:45:00+08:00"
+    },
+    {
+      "domain": "12_propagation",
+      "subdomain": "fragging_tools",
+      "timestamp": "2026-01-28T01:40:00+08:00"
+    },
+    {
+      "domain": "12_propagation",
+      "subdomain": "sps_fragging",
+      "timestamp": "2026-01-28T01:41:00+08:00"
+    },
+    {
+      "domain": "12_propagation",
+      "subdomain": "lps_fragging",
+      "timestamp": "2026-01-28T01:42:00+08:00"
+    },
+    {
+      "domain": "12_propagation",
+      "subdomain": "soft_coral_fragging",
+      "timestamp": "2026-01-28T01:43:00+08:00"
+    },
+    {
+      "domain": "12_propagation",
+      "subdomain": "healing_protocols",
+      "timestamp": "2026-01-28T01:44:00+08:00"
+    },
+    {
+      "domain": "06_pests_diseases",
+      "subdomain": "quarantine_integration",
+      "timestamp": "2026-01-27T17:30:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "mechanical_filtration",
+      "timestamp": "2026-01-27T18:45:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "major_elements",
+      "timestamp": "2026-01-27T02:35:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "nutrients",
+      "timestamp": "2026-01-27T02:40:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "trace_elements",
+      "timestamp": "2026-01-27T02:45:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "stability_parameters",
+      "timestamp": "2026-01-27T02:50:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "parameter_interactions",
+      "timestamp": "2026-01-27T02:55:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "testing_measurement",
+      "timestamp": "2026-01-27T03:00:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "trend_analysis",
+      "timestamp": "2026-01-27T03:10:00+08:00"
+    },
+    {
+      "domain": "01_water_chemistry",
+      "subdomain": "safe_corrections",
+      "timestamp": "2026-01-27T03:20:00+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "par_spectrum",
+      "timestamp": "2026-01-27T03:30:00+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "photoperiod",
+      "timestamp": "2026-01-27T03:40:00+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "fixture_types",
+      "timestamp": "2026-01-27T03:45:00+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "mounting_placement",
+      "timestamp": "2026-01-27T03:08:39+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "acclimation",
+      "timestamp": "2026-01-27T03:08:39+08:00"
+    },
+    {
+      "domain": "02_lighting",
+      "subdomain": "coral_light_requirements",
+      "timestamp": "2026-01-27T13:44:47+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "turnover_volume",
+      "timestamp": "2026-01-27T13:57:20+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "flow_patterns",
+      "timestamp": "2026-01-27T14:15:00+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "boundary_layers",
+      "timestamp": "2026-01-27T14:30:00+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "placement_dead_spots",
+      "timestamp": "2026-01-27T14:50:00+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "pump_technologies",
+      "timestamp": "2026-01-27T15:00:00+08:00"
+    },
+    {
+      "domain": "03_flow_hydrodynamics",
+      "subdomain": "anemone_lps_protection",
+      "timestamp": "2026-01-27T15:30:00+08:00"
+    },
+    {
+      "domain": "04_coral_biology",
+      "subdomain": "anatomy_physiology",
+      "timestamp": "2026-01-27T15:35:00+08:00"
+    },
+    {
+      "domain": "04_coral_biology",
+      "subdomain": "calcification_process",
+      "timestamp": "2026-01-27T15:55:00+08:00"
+    },
+    {
+      "domain": "04_coral_biology",
+      "subdomain": "zooxanthellae_symbiosis",
+      "timestamp": "2026-01-27T16:20:00+08:00"
+    },
+    {
+      "domain": "04_coral_biology",
+      "subdomain": "metabolism_respiration",
+      "timestamp": "2026-01-27T14:48:00+08:00"
+    },
+    {
+      "domain": "04_coral_biology",
+      "subdomain": "skeletal_structure",
+      "timestamp": "2026-01-27T15:45:00+08:00"
+    },
+    {
+      "domain": "05_coral_nutrition",
+      "subdomain": "dissolved_organics",
+      "timestamp": "2026-01-27T16:15:00+08:00"
+    },
+    {
+      "domain": "05_coral_nutrition",
+      "subdomain": "particulate_feeding",
+      "timestamp": "2026-01-27T16:30:00+08:00"
+    },
+    {
+      "domain": "05_coral_nutrition",
+      "subdomain": "amino_acids",
+      "timestamp": "2026-01-27T16:45:00+08:00"
+    },
+    {
+      "domain": "05_coral_nutrition",
+      "subdomain": "target_feeding",
+      "timestamp": "2026-01-27T14:57:00+08:00"
+    },
+    {
+      "domain": "05_coral_nutrition",
+      "subdomain": "feeding_response",
+      "timestamp": "2026-01-27T15:15:00+08:00"
+    },
+    {
+      "domain": "06_pests_diseases",
+      "subdomain": "common_pests",
+      "timestamp": "2026-01-27T15:20:00+08:00"
+    },
+    {
+      "domain": "06_pests_diseases",
+      "subdomain": "disease_identification",
+      "timestamp": "2026-01-27T15:35:00+08:00"
+    },
+    {
+      "domain": "06_pests_diseases",
+      "subdomain": "treatment_dips",
+      "timestamp": "2026-01-27T15:43:00+08:00"
+    },
+    {
+      "domain": "06_pests_diseases",
+      "subdomain": "biological_controls",
+      "timestamp": "2026-01-27T16:00:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "biological_filtration",
+      "timestamp": "2026-01-27T18:30:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "chemical_filtration",
+      "timestamp": "2026-01-27T18:55:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "protein_skimming",
+      "timestamp": "2026-01-27T19:05:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "refugium_design",
+      "timestamp": "2026-01-27T19:15:00+08:00"
+    },
+    {
+      "domain": "07_filtration_science",
+      "subdomain": "cryptic_zones",
+      "timestamp": "2026-01-27T19:25:00+08:00"
+    },
+    {
+      "domain": "08_microbiology",
+      "subdomain": "bacterial_strains",
+      "timestamp": "2026-01-27T19:35:00+08:00"
+    },
+    {
+      "domain": "08_microbiology",
+      "subdomain": "carbon_dosing",
+      "timestamp": "2026-01-27T19:45:00+08:00"
+    },
+    {
+      "domain": "08_microbiology",
+      "subdomain": "cyano_management",
+      "timestamp": "2026-01-27T20:00:00+08:00"
+    },
+    {
+      "domain": "09_dosing_methods",
+      "subdomain": "dosing_principles",
+      "timestamp": "2026-01-27T19:30:00+08:00"
+    },
+    {
+      "domain": "09_dosing_methods",
+      "subdomain": "two_part_balling",
+      "timestamp": "2026-01-27T23:35:00+08:00"
+    },
+    {
+      "domain": "09_dosing_methods",
+      "subdomain": "calcium_reactors",
+      "timestamp": "2026-01-27T23:45:00+08:00"
+    },
+    {
+      "domain": "10_testing_protocols",
+      "subdomain": "manual_testing",
+      "timestamp": "2026-01-27T23:50:00+08:00"
+    },
+    {
+      "domain": "10_testing_protocols",
+      "subdomain": "automated_checkers",
+      "timestamp": "2026-01-27T23:58:00+08:00"
+    },
+    {
+      "domain": "10_testing_protocols",
+      "subdomain": "icp_sampling",
+      "timestamp": "2026-01-27T23:59:50+08:00"
+    },
+    {
+      "domain": "10_testing_protocols",
+      "subdomain": "microscope_analysis",
+      "timestamp": "2026-01-28T00:15:00+08:00"
+    },
+    {
+      "domain": "10_testing_protocols",
+      "subdomain": "log_keeping",
+      "timestamp": "2026-01-28T00:30:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "fish_quarantine",
+      "timestamp": "2026-01-28T00:45:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "coral_acclimation",
+      "timestamp": "2026-01-28T01:10:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "acclimation_logistics",
+      "timestamp": "2026-01-28T01:30:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "vendor_selection",
+      "timestamp": "2026-01-28T01:50:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "coral_quarantine",
+      "timestamp": "2026-01-28T01:55:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "invert_quarantine",
+      "timestamp": "2026-01-28T02:15:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "acclimation_methods",
+      "timestamp": "2026-01-28T02:24:00+08:00"
+    },
+    {
+      "domain": "11_acclimation_quarantine",
+      "subdomain": "pest_inspection",
+      "timestamp": "2026-01-28T02:30:00+08:00"
     }
+  ],
+  "flagged_for_review": [],
+  "model_usage": {
+    "claude-sonnet-4.5": 10,
+    "claude-opus-4.5-thinking": 11,
+    "gemini-3-pro-high": 10,
+    "gemini-3-pro-low": 0,
+    "gemini-3-flash": 11
+  },
+  "cumulative_tokens": {
+    "claude-sonnet-4.5": {
+      "total_tokens_estimated": 0,
+      "subdomains_processed": 0,
+      "avg_tokens_per_subdomain": 0,
+      "last_updated": "2026-02-01T01:50:00+08:00"
+    },
+    "claude-opus-4.5-thinking": {
+      "total_tokens_estimated": 0,
+      "subdomains_processed": 0,
+      "avg_tokens_per_subdomain": 0,
+      "last_updated": "2026-02-01T01:50:00+08:00"
+    },
+    "gemini-3-pro-high": {
+      "total_tokens_estimated": 0,
+      "subdomains_processed": 0,
+      "avg_tokens_per_subdomain": 0,
+      "last_updated": "2026-02-01T01:50:00+08:00"
+    },
+    "gemini-3-flash": {
+      "total_tokens_estimated": 0,
+      "subdomains_processed": 0,
+      "avg_tokens_per_subdomain": 0,
+      "last_updated": "2026-02-01T01:50:00+08:00"
+    }
+  },
+  "settings": {
+    "triton_anchor_frequency": 5,
+    "auto_continue": true,
+    "pause_on_reject": true,
+    "batch_size": 12,
+    "batch_size_source": "DYNAMIC"
+  }
 }

@@ -120,3 +120,62 @@ Before submitting:
 - [ ] No new errors introduced
 - [ ] Refinement Summary included
 ```
+
+---
+
+## Self-Monitoring Protocol
+
+### Performance Tracking
+
+For each refinement:
+
+1. **Issues Addressed:** Count from Critic report
+2. **Research Time:** If additional research needed
+3. **Synthesis Quality:** How well you integrated feedback
+
+### Degradation Indicators
+
+Write health report if:
+
+- **Forgetting Critic feedback** (addressing same issue twice)
+- **Skipping required fixes** from Critical issues list
+- **Response quality drops** (not thoroughly addressing feedback)
+- **Taking significantly longer** per subdomain
+
+### Health Report Format
+
+Save to: `orchestration/pit_stop_reports/batch_[N]_refiner.json`
+
+`json
+{
+  "batch_number": 12,
+  "agent": "REFINER",
+  "model": "claude-opus-4.5-thinking",
+  "session_duration_minutes": 95,
+  "subdomains_processed": 12,
+  "performance_summary": {
+    "avg_time_per_subdomain_seconds": 240,
+    "trend": "SLIGHT_DEGRADE",
+    "avg_issues_addressed_per_subdomain": 3.5
+  },
+  "health_assessment": {
+    "context_estimate_percent": 70,
+    "coherence": "MEDIUM",
+    "ready_to_continue": false,
+    "recommended_subdomains_before_clear": 15
+  },
+  "observations": [
+    "Thinking mode consumes more context",
+    "Quality remains high but approaching limit",
+    "Slight slowdown detected after 10 subdomains"
+  ],
+  "suggestions": [
+    "Claude Opus Thinking best at 12-15 subdomain batches",
+    "Consider non-thinking Opus or Sonnet for longer batches"
+  ]
+}
+`
+
+### Known Safe Limit
+
+Claude Opus 4.5 Thinking: ~15 subdomains (thinking mode uses more context)

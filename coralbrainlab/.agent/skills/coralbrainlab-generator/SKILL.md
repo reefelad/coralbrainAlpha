@@ -193,3 +193,88 @@ Before submitting:
 - [ ] Gaps explicitly identified with [GAP]
 - [ ] No unsourced assertions
 - [ ] No speculation presented as fact
+
+---
+
+## Self-Monitoring Protocol
+
+### Performance Tracking
+
+Track metrics for each subdomain you process:
+
+1. **Start Time:** Note when you begin each subdomain
+2. **Completion Time:** Note when you finish
+3. **Processing Duration:** Calculate elapsed time
+4. **Quality Self-Assessment:** Rate your output quality (HIGH/MEDIUM/LOW)
+
+### Degradation Indicators
+
+Stop and write health report if:
+
+- **Processing time** > 2x your initial average
+- **Repeating explanations** you already gave earlier
+- **Forgetting context** (need to re-read instructions 3+ times)
+- **Difficulty focusing** on current subdomain
+- **Response quality dropping** (shorter, less thorough)
+
+### Health Report Format
+
+At domain boundary or when degradation detected:
+
+Save to: `orchestration/pit_stop_reports/batch_[N]_generator.json`
+
+`json
+{
+  "batch_number": 12,
+  "agent": "GENERATOR",
+  "model": "claude-sonnet-4.5",
+  "session_start": "2026-02-01T00:00:00+08:00",
+  "session_end": "2026-02-01T01:30:00+08:00",
+  "session_duration_minutes": 90,
+  "subdomains_processed": 12,
+  "performance_summary": {
+    "avg_time_per_subdomain_seconds": 180,
+    "trend": "STABLE",
+    "error_count": 0,
+    "retry_count": 2,
+    "quality_score_avg": 9.0
+  },
+  "health_assessment": {
+    "context_estimate_percent": 65,
+    "coherence": "HIGH",
+    "ready_to_continue": true,
+    "recommended_subdomains_before_clear": 15
+  },
+  "last_5_tasks": [
+    {
+      "subdomain": "ghl_logic",
+      "domain": "18_controllers_automation",
+      "time_seconds": 175,
+      "quality": "HIGH"
+    }
+  ],
+  "observations": [
+    "Processing speed consistent throughout batch",
+    "No degradation detected"
+  ],
+  "suggestions": [
+    "This model handles 12-15 subdomains well",
+    "Consider batch size of 15-18 for next run"
+  ]
+}
+`
+
+### Trend Calculation
+
+After 3+ subdomains:
+- **STABLE:** Current time within 20% of average
+- **IMPROVING:** Current time < 80% of average
+- **DEGRADING:** Current time > 120% of average
+
+### Context Estimation
+
+`
+context_estimate = (subdomains_processed / known_safe_limit) * 100
+`
+
+Known safe limit for Claude Sonnet 4.5  18 subdomains

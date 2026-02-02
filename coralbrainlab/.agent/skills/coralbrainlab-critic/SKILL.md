@@ -205,3 +205,65 @@ Save your critique to:
 ```
 outputs/critiqued/[domain_id]/[subdomain_id]_critique.md
 ```
+
+---
+
+## Self-Monitoring Protocol
+
+### Performance Tracking
+
+For each critique you complete:
+
+1. **Source Verification Time:** How long to verify 2+ sources
+2. **Critique Quality:** Did you catch all issues?
+3. **Processing Duration:** Total time for full critique
+
+### Degradation Indicators
+
+Write health report if:
+
+- **Skipping source verification** (too tired to check URLs)
+- **Verdicts becoming lenient** (PASS when should be REVISE)
+- **Missing obvious issues** in Generator output
+- **Taking 2x longer** than initial critiques
+
+### Health Report Format
+
+Save to: `orchest ration/pit_stop_reports/batch_[N]_critic.json`
+
+`json
+{
+  "batch_number": 12,
+  "agent": "CRITIC",
+  "model": "gemini-3-pro-high",
+  "session_duration_minutes": 75,
+  "subdomains_processed": 12,
+  "performance_summary": {
+    "avg_time_per_subdomain_seconds": 120,
+    "trend": "STABLE",
+    "sources_verified_count": 28,
+    "verdicts": {
+      "PASS": 8,
+      "REVISE": 3,
+      "REJECT": 1
+    }
+  },
+  "health_assessment": {
+    "context_estimate_percent": 45,
+    "coherence": "HIGH",
+    "ready_to_continue": true,
+    "recommended_subdomains_before_clear": 25
+  },
+  "observations": [
+    "Large context window (1M tokens) handles extended batches well",
+    "Source verification remains thorough"
+  ],
+  "suggestions": [
+    "Gemini Pro can easily handle 20-25 subdomain batches"
+  ]
+}
+`
+
+### Known Safe Limit
+
+Gemini 3 Pro High: ~25 subdomains (1M token context window)
